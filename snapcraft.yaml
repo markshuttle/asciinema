@@ -1,0 +1,27 @@
+name: asciinema
+version: 1.3.0+git
+summary: Record and share your terminal sessions, the right way
+description: |
+  Forget screen recording apps and blurry video. Enjoy a lightweight, purely
+  text-based approach to terminal recording.
+
+  Record right where you work - in a terminal. To start just run 'asciinema
+  rec', to finish hit Ctrl-D or type exit. Any time you see a command you
+  want like to try in your own terminal just pause the player and copy-paste
+  the content you want. It's just a text after all! Easily embed an
+  asciicast player in your blog post, project documentation page or in your
+  conference talk slides.
+
+  Learn more at https://asciinema.org/
+
+confinement: devmode
+
+apps:
+  asciinema:
+    command: usr/bin/asciinema
+    plugs: [ home ]
+
+parts:
+  asciinema:
+    plugin: python3
+    source: .
